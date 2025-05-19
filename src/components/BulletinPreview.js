@@ -20,11 +20,12 @@ const BulletinPreview = ({ student, subjects }) => {
     th { background-color: #f5f5f5; }
     .competency-cell { border-bottom: 1px solid #eee; padding: 5px; }
     .photo { width: 80px; height: 80px; border-radius: 50%; }
+    tr { break-inside: avoid; page-break-inside: avoid; }
   </style>
 </head>
 <body>
   <h1 style="text-align:center">Boletín Escolar</h1>
-  
+
   <table style="margin-bottom:20px">
     <tr>
       <td><strong>Estudiante:</strong></td>
@@ -44,21 +45,19 @@ const BulletinPreview = ({ student, subjects }) => {
   </table>
 
   <h2 style="text-align:center">Evaluación de Competencias</h2>
-  
+
   <table>
-    <thead>
       <tr>
         <th>Materia</th>
         <th style="width:60%">Competencias</th>
         <th>Nota</th>
       </tr>
-    </thead>
     <tbody>
       ${subjects.map(subject => {
         const competencies = subject.competencies.split(',').filter(c => c.trim());
         return competencies.map((comp, i) => `
           <tr>
-            ${i === 0 ? `<td rowspan="${competencies.length}">${subject.name}</td>` : ''}
+            ${i === 0 ? `<td rowspan="${competencies.length}" style="text-align: center; vertical-align: middle;">${subject.name}</td>` : ''}
             <td class="competency-cell">${comp.trim()}</td>
             ${i === 0 ? `<td rowspan="${competencies.length}" style="text-align:center">${subject.grade}</td>` : ''}
           </tr>
@@ -70,6 +69,21 @@ const BulletinPreview = ({ student, subjects }) => {
   <div style="text-align:right; font-weight:bold; margin-top:20px">
     Promedio General: ${calculateGeneralAverage()}
   </div>
+
+  <!-- Firma Profesor y Rector -->
+  <table style="width: 100%; margin-top: 100px; border: none;">
+    <tr>
+      <td style="border: none; text-align: center;">
+        <div style="border-bottom: 1px solid #000; width: 80%; margin: 0 auto; height: 2em;"></div>
+        <div style="margin-top: 5px;">Firma del Profesor</div>
+      </td>
+      <td style="border: none; text-align: center;">
+        <div style="border-bottom: 1px solid #000; width: 80%; margin: 0 auto; height: 2em;"></div>
+        <div style="margin-top: 5px;">Firma del Rector</div>
+      </td>
+    </tr>
+  </table>
+
 </body>
 </html>`;
   };
@@ -79,9 +93,10 @@ const BulletinPreview = ({ student, subjects }) => {
     const printWindow = window.open('', '_blank');
     printWindow.document.write(printContent);
     printWindow.document.close();
-    setTimeout(() => {
+
+    printWindow.onload = () => {
       printWindow.print();
-    }, 500);
+    };
   };
 
   const handleDownload = () => {
@@ -95,17 +110,6 @@ const BulletinPreview = ({ student, subjects }) => {
     link.click();
     document.body.removeChild(link);
     URL.revokeObjectURL(url);
-  };
-
-  const renderCompetencies = (competencies) => {
-    return competencies.split(',').filter(c => c.trim()).map((comp, i) => (
-      <div key={i} style={{
-        borderBottom: i < competencies.split(',').length - 1 ? '1px solid #eee' : 'none',
-        padding: '5px'
-      }}>
-        {comp.trim()}
-      </div>
-    ));
   };
 
   return (
@@ -133,11 +137,7 @@ const BulletinPreview = ({ student, subjects }) => {
                   <td>{student.firstName} {student.lastName}</td>
                   {student.photo && (
                     <td rowSpan="3" style={{ textAlign: 'center' }}>
-                      <img 
-                        src={student.photo} 
-                        alt="Estudiante" 
-                        style={{ width: '80px', height: '80px', borderRadius: '50%' }}
-                      />
+                      <img src={student.photo} alt="Estudiante" style={{ width: '80px', height: '80px', borderRadius: '50%' }} />
                     </td>
                   )}
                 </tr>
@@ -170,19 +170,46 @@ const BulletinPreview = ({ student, subjects }) => {
                   const competencies = subject.competencies.split(',').filter(c => c.trim());
                   return competencies.map((comp, i) => (
                     <tr key={`${index}-${i}`}>
-                      {i === 0 && <td rowSpan={competencies.length} style={tableCellStyle}>{subject.name}</td>}
+                      {i === 0 && (
+                        <td
+                          rowSpan={competencies.length}
+                          style={{ ...tableCellStyle, textAlign: 'center', verticalAlign: 'middle' }}
+                        >
+                          {subject.name}
+                        </td>
+                      )}
                       <td style={tableCellStyle}>{comp.trim()}</td>
-                      {i === 0 && <td rowSpan={competencies.length} style={{ ...tableCellStyle, textAlign: 'center' }}>{subject.grade}</td>}
+                      {i === 0 && (
+                        <td
+                          rowSpan={competencies.length}
+                          style={{ ...tableCellStyle, textAlign: 'center' }}
+                        >
+                          {subject.grade}
+                        </td>
+                      )}
                     </tr>
                   ));
                 })}
               </tbody>
             </table>
-            <div style={{ textAlign: 'right', fontWeight: 'bold', marginTop: '20px' }}>
-              Promedio General: {calculateGeneralAverage()}
-            </div>
           </div>
         )}
+
+        {/* Firma Profesor y Rector en vista previa */}
+        <table style={{ width: '100%', marginTop: '100px', border: 'none' }}>
+          <tbody>
+            <tr>
+              <td style={{ border: 'none', textAlign: 'center' }}>
+                <div style={{ borderBottom: '1px solid #000', width: '80%', margin: '0 auto', height: '2em' }}></div>
+                <div style={{ marginTop: '5px' }}>Firma del Profesor</div>
+              </td>
+              <td style={{ border: 'none', textAlign: 'center' }}>
+                <div style={{ borderBottom: '1px solid #000', width: '80%', margin: '0 auto', height: '2em' }}></div>
+                <div style={{ marginTop: '5px' }}>Firma del Rector</div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   );
@@ -194,22 +221,19 @@ const buttonStyle = {
   color: 'white',
   border: 'none',
   borderRadius: '4px',
-  cursor: 'pointer'
+  cursor: 'pointer',
 };
 
 const tableHeaderStyle = {
   padding: '12px',
   backgroundColor: '#f5f5f5',
-  border: '1px solid #ddd'
+  border: '1px solid #ddd',
 };
 
 const tableCellStyle = {
   padding: '12px',
   border: '1px solid #ddd',
-  verticalAlign: 'top'
+  verticalAlign: 'top',
 };
 
 export default BulletinPreview;
-
-
-// DONE
