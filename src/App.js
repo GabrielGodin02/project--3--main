@@ -27,7 +27,7 @@ const App = () => {
     <>
       {/* Imagen fija fuera de cualquier contenedor scroll */}
       <img
-        src="img/1000232644.png"
+        src="img/SGN_05_31_2025_1748738693316.png"
         alt="logo"
         style={{
           position: 'fixed',  // Fija en ventana
@@ -38,7 +38,8 @@ const App = () => {
           zIndex: 9999,
           backgroundColor: 'transparent',
         }}
-      />
+      /> 
+      
 
       {/* Contenedor principal con scroll natural */}
       <div style={{
