@@ -35,7 +35,7 @@ const BulletinPreview = ({ student, subjects }) => {
       <p style="margin: 0; color: #555;">Riohacha - La Guajira</p>
     </div>
     <div style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); width: 100px;">
-      <img src="${process.env.PUBLIC_URL}/img/logo_pequeños.png" style="width: 100%; height: auto;">
+      <img src="${process.env.PUBLIC_URL}public/img/logo_pequeños.png" style="width: 100%; height: auto;">
     </div>
   </div>
 

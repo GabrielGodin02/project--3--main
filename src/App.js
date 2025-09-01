@@ -25,16 +25,14 @@ const App = () => {
 
   return (
     <>
-      {/* Contenedor principal con scroll natural */}
       <div style={{
         maxWidth: '1200px',
         margin: '0 auto',
-        paddingTop: '80px',  // Para que no tape la imagen
+        paddingTop: '80px',
         paddingLeft: '80px',
         paddingRight: '20px',
         paddingBottom: '20px',
         fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
-        // No usar overflow aquí para que el scroll sea de la ventana
       }}>
         <h1 style={{
           textAlign: 'center',
