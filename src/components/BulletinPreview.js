@@ -27,15 +27,15 @@ const BulletinPreview = ({ student, subjects }) => {
 
   <!-- Encabezado Institucional -->
   <div style="display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
-    <div style="flex:0 0 120px; text-align:center;">
-      <img src="https://i.ibb.co/mR44Hqg/escudo.png" alt="Escudo Colegio" style="width:100px; height:auto;" />
-    </div>
     <div style="flex:1; text-align:center;">
       <h2 style="margin:0;">CENTRO EDUCATIVO PEQUEÑOS GENIOS</h2>
       <p style="margin:2px 0;"><strong>Resolución No. 351 agosto 19 de 2010</strong></p>
       <p style="margin:2px 0;">Secretaría de Educación Municipal</p>
       <p style="margin:2px 0;"><strong>DANE 344001001311 &nbsp;&nbsp; NIT 900381245 - 6</strong></p>
       <p style="margin:2px 0;">Cl 15 No. 12 C 03, Riohacha - La Guajira</p>
+    </div>
+    <div style="flex:0 0 120px; text-align:center;">
+      <img src="https://i.ibb.co/mR44Hqg/escudo.png" alt="Escudo Colegio" style="width:100px; height:auto;" />
     </div>
   </div>
 
