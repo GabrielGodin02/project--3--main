@@ -125,23 +125,25 @@ const StudentForm = ({ onStudentChange }) => {
             </td>
           </tr>
           <tr>
-            <td style={{ padding: '10px' }}>
-              <label style={{ fontWeight: '500' }}>Jornada:</label>
-            </td>
-            <td style={{ padding: '10px' }}>
-              <select
-                name="schedule"
-                value={student.schedule}
-                onChange={handleChange}
-                style={inputStyle}
-              >
-                <option value="">Seleccione...</option>
-                <option value="Mañana">Mañana</option>
-                <option value="Tarde">Tarde</option>
-                <option value="Completa">Completa</option>
-              </select>
-            </td>
-          </tr>
+            <td style={{padding:'10px'}}>
+              <label style={{fontWeight:'500'}}></label>
+            </td>
+            <td style={{padding:'10px'}}>
+              <select
+                name="jornada"
+                value={student.jornada}
+                onChange={handleChange}
+                style={inputStyle}
+              >
+                <option value="">Seleccione...</option>
+                <option value="Mañana">Mañana</option>
+                <option value="Tarde">Tarde</option>
+                <option value="Mixta">Mixta</option>
+              </select>
+
+            </td>
+          </tr>
+
         </tbody>
       </table>
 
