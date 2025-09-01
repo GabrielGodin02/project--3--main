@@ -26,13 +26,17 @@ const BulletinPreview = ({ student, subjects }) => {
 <body>
 
   <!-- Encabezado Institucional -->
-  <div style="text-align:center; margin-bottom:20px;">
-    <img src="public/img/logo_pequeños" alt="Escudo Colegio" style="width:100px; height:auto; margin-bottom:10px;" />
-    <h2 style="margin:0;">CENTRO EDUCATIVO PEQUEÑOS GENIOS</h2>
-    <p style="margin:2px 0;"><strong>Resolución No. 351 agosto 19 de 2010</strong></p>
-    <p style="margin:2px 0;">Secretaría de Educación Municipal</p>
-    <p style="margin:2px 0;"><strong>DANE 344001001311 &nbsp;&nbsp; NIT 900381245 - 6</strong></p>
-    <p style="margin:2px 0;">Cl 15 No. 12 C 03, Riohacha - La Guajira</p>
+  <div style="display:flex; align-items:center; justify-content:center; margin-bottom:20px;">
+    <div style="flex:0 0 120px; text-align:center;">
+      <img src="https://i.ibb.co/mR44Hqg/escudo.png" alt="Escudo Colegio" style="width:100px; height:auto;" />
+    </div>
+    <div style="flex:1; text-align:center;">
+      <h2 style="margin:0;">CENTRO EDUCATIVO PEQUEÑOS GENIOS</h2>
+      <p style="margin:2px 0;"><strong>Resolución No. 351 agosto 19 de 2010</strong></p>
+      <p style="margin:2px 0;">Secretaría de Educación Municipal</p>
+      <p style="margin:2px 0;"><strong>DANE 344001001311 &nbsp;&nbsp; NIT 900381245 - 6</strong></p>
+      <p style="margin:2px 0;">Cl 15 No. 12 C 03, Riohacha - La Guajira</p>
+    </div>
   </div>
 
   <h1 style="text-align:center">Boletín Escolar</h1>
@@ -144,13 +148,17 @@ const BulletinPreview = ({ student, subjects }) => {
       <div style={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px' }}>
         
         {/* Encabezado Institucional en Vista Previa */}
-        <div style={{ textAlign: 'center', marginBottom: '20px' }}>
-          <img src="public/img/logo_pequeños" alt="Escudo Colegio" style={{ width: '100px', height: 'auto', marginBottom: '10px' }} />
-          <h2 style={{ margin: 0 }}>CENTRO EDUCATIVO PEQUEÑOS GENIOS</h2>
-          <p style={{ margin: '2px 0' }}><strong>Resolución No. 351 agosto 19 de 2010</strong></p>
-          <p style={{ margin: '2px 0' }}>Secretaría de Educación Municipal</p>
-          <p style={{ margin: '2px 0' }}><strong>DANE 344001001311 &nbsp;&nbsp; NIT 900381245 - 6</strong></p>
-          <p style={{ margin: '2px 0' }}>Cl 15 No. 12 C 03, Riohacha - La Guajira</p>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>
+          <div style={{ flex: '0 0 120px', textAlign: 'center' }}>
+            <img src="https://i.ibb.co/mR44Hqg/escudo.png" alt="Escudo Colegio" style={{ width: '100px', height: 'auto' }} />
+          </div>
+          <div style={{ flex: 1, textAlign: 'center' }}>
+            <h2 style={{ margin: 0 }}>CENTRO EDUCATIVO PEQUEÑOS GENIOS</h2>
+            <p style={{ margin: '2px 0' }}><strong>Resolución No. 351 agosto 19 de 2010</strong></p>
+            <p style={{ margin: '2px 0' }}>Secretaría de Educación Municipal</p>
+            <p style={{ margin: '2px 0' }}><strong>DANE 344001001311 &nbsp;&nbsp; NIT 900381245 - 6</strong></p>
+            <p style={{ margin: '2px 0' }}>Cl 15 No. 12 C 03, Riohacha - La Guajira</p>
+          </div>
         </div>
 
         {student.firstName && (
