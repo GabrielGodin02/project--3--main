@@ -58,7 +58,7 @@ const BulletinPreview = ({ student, subjects }) => {
       </tr>
       <tr>
         <td><strong>Jornada:</strong></td>
-        <td>${student.schedule}</td>
+        <td>${student.jornada}</td>
       </tr>
     </tbody>
   </table>
