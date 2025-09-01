@@ -42,6 +42,10 @@ const BulletinPreview = ({ student, subjects }) => {
       <td><strong>Periodo:</strong></td>
       <td>${student.period}</td>
     </tr>
+    <tr>
+      <td><strong>Periodo:</strong></td>
+      <td>${student.jornada}</td>
+    </tr>
   </table>
 
   <h2 style="text-align:center">Evaluación de Competencias</h2>
