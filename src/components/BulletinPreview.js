@@ -24,6 +24,17 @@ const BulletinPreview = ({ student, subjects }) => {
   </style>
 </head>
 <body>
+
+  <!-- Encabezado Institucional -->
+  <div style="text-align:center; margin-bottom:20px;">
+    <img src="public/img/logo_pequeños" alt="Escudo Colegio" style="width:100px; height:auto; margin-bottom:10px;" />
+    <h2 style="margin:0;">CENTRO EDUCATIVO PEQUEÑOS GENIOS</h2>
+    <p style="margin:2px 0;"><strong>Resolución No. 351 agosto 19 de 2010</strong></p>
+    <p style="margin:2px 0;">Secretaría de Educación Municipal</p>
+    <p style="margin:2px 0;"><strong>DANE 344001001311 &nbsp;&nbsp; NIT 900381245 - 6</strong></p>
+    <p style="margin:2px 0;">Cl 15 No. 12 C 03, Riohacha - La Guajira</p>
+  </div>
+
   <h1 style="text-align:center">Boletín Escolar</h1>
 
   <table style="margin-bottom:20px">
@@ -131,6 +142,17 @@ const BulletinPreview = ({ student, subjects }) => {
       </div>
 
       <div style={{ backgroundColor: 'white', padding: '20px', borderRadius: '8px' }}>
+        
+        {/* Encabezado Institucional en Vista Previa */}
+        <div style={{ textAlign: 'center', marginBottom: '20px' }}>
+          <img src="public/img/logo_pequeños" alt="Escudo Colegio" style={{ width: '100px', height: 'auto', marginBottom: '10px' }} />
+          <h2 style={{ margin: 0 }}>CENTRO EDUCATIVO PEQUEÑOS GENIOS</h2>
+          <p style={{ margin: '2px 0' }}><strong>Resolución No. 351 agosto 19 de 2010</strong></p>
+          <p style={{ margin: '2px 0' }}>Secretaría de Educación Municipal</p>
+          <p style={{ margin: '2px 0' }}><strong>DANE 344001001311 &nbsp;&nbsp; NIT 900381245 - 6</strong></p>
+          <p style={{ margin: '2px 0' }}>Cl 15 No. 12 C 03, Riohacha - La Guajira</p>
+        </div>
+
         {student.firstName && (
           <div style={{ marginBottom: '30px' }}>
             <h2 style={{ textAlign: 'center' }}>Boletín Escolar</h2>
