@@ -34,7 +34,7 @@ const BulletinPreview = ({ student, subjects }) => {
       <p style="margin: 0; font-size: 0.8em;">Riohacha - La Guajira</p>
     </div>
     <div style="width: 100px;">
-      <img src="${process.env.PUBLIC_URL}/img/logo-pequenos-genios.png" style="width: 100%; height: auto;">
+      <img src="${process.env.PUBLIC_URL}public/img/logo_pequeños-genios.png" style="width: 100%; height: auto;">
     </div>
   </div>
     <h1 style="text-align:center">Boletín Escolar</h1>
