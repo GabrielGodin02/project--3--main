@@ -126,7 +126,7 @@ const StudentForm = ({ onStudentChange }) => {
           </tr>
           <tr>
             <td style={{padding:'10px'}}>
-              <label style={{fontWeight:'500'}}></label>
+              <label style={{fontWeight:'500'}}>Jornada</label>
             </td>
             <td style={{padding:'10px'}}>
               <select
