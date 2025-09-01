@@ -9,7 +9,6 @@ const App = () => {
     lastName: '',
     grade: '',
     period: '',
-    schedule: '',
     photo: null,
   });
   const [subjects, setSubjects] = useState([]);
@@ -26,14 +25,17 @@ const App = () => {
 
   return (
     <>
+      
+      {/* Contenedor principal con scroll natural */}
       <div style={{
         maxWidth: '1200px',
         margin: '0 auto',
-        paddingTop: '80px',
+        paddingTop: '80px',  // Para que no tape la imagen
         paddingLeft: '80px',
         paddingRight: '20px',
         paddingBottom: '20px',
         fontFamily: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif",
+        // No usar overflow aquí para que el scroll sea de la ventana
       }}>
         <h1 style={{
           textAlign: 'center',
@@ -46,22 +48,20 @@ const App = () => {
         </h1>
 
         <div style={{
-          display: 'flex',
-          gap: '30px',
-          alignItems: 'flex-start',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr',
+          gap: '30px'
         }}>
-          <div style={{ flex: '1' }}>
+          <div>
             <StudentForm onStudentChange={setStudent} />
             <SubjectForm onSubjectAdd={handleSubjectAdd} />
           </div>
 
-          <div style={{ flex: '1' }}>
-            <BulletinPreview
-              student={student}
-              subjects={subjects}
-              onSubjectRemove={handleSubjectRemove}
-            />
-          </div>
+          <BulletinPreview
+            student={student}
+            subjects={subjects}
+            onSubjectRemove={handleSubjectRemove}
+          />
         </div>
       </div>
     </>

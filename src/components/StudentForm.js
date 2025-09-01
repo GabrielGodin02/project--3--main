@@ -124,26 +124,9 @@ const StudentForm = ({ onStudentChange }) => {
               </select>
             </td>
           </tr>
-          <tr>
-           <td style={{ padding: '10px' }}>
-             <label style={{ fontWeight: '500' }}>Jornada:</label>
-           </td>
-           <td style={{ padding: '10px' }}>
-             <select
-               name="schedule"
-               value={student.schedule}
-               onChange={handleChange}
-                tyle={inputStyle}
-             >
-               <option value="">Seleccione...</option>
-               <option value="Mañana">Mañana</option>
-               <option value="Tarde">Tarde</option>
-               <option value="Completa">Completa</option>
-             </select>
-           </td>
-         </tr>
         </tbody>
       </table>
+
       {/* Botón de seleccionar archivo debajo del formulario */}
       <div style={{ textAlign: 'center', marginTop: '10px' }}>
         <input
