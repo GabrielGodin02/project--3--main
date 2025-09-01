@@ -35,7 +35,7 @@ const BulletinPreview = ({ student, subjects }) => {
       <p style="margin:2px 0;">Cl 15 No. 12 C 03, Riohacha - La Guajira</p>
     </div>
     <div style="flex:0 0 120px; text-align:center;">
-      <img src="https://i.ibb.co/mR44Hqg/escudo.png" alt="Escudo Colegio" style="width:100px; height:auto;" />
+      <img src="public/img/logo_pequeños.png" alt="Escudo Colegio" style="width:100px; height:auto;" />
     </div>
   </div>
 
